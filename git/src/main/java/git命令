@@ -102,10 +102,14 @@ ssh密码设置
 2.在admin/下的.gitconfig中写入：       //用作关联git.ignore
 [core]
 	excludesfile = C:\Users\Admin\git.ignore            //windows中使用“/”
-3.
+3.setting中设置git
 */
 
-
+/*
+关联git-hub
+在git-hub中设置token
+然后在idea中使用token登录
+*/
 
 
 
