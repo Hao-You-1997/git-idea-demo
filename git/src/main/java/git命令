@@ -1,0 +1,111 @@
+//此处用户名和邮箱和登录github无关系，这里只是本地客户端
+git config --global user.name yh
+
+git config --global user.email 18206889179@163.com
+
+//初始化目录
+git init
+
+//git状态
+git status
+
+/*vim{
+yy          //复制
+p           //粘贴
+i           //插入
+esc         //退出模式
+:wq          //保存并退出
+}*/
+
+//添加文件至追踪列表//只是在暂存区
+git add hello.txt
+//删除暂存区文件
+git rm --cache hello.txt
+//提交暂存区文件
+git commit -m "hello1.0" hello.txt
+//查看提交日志
+git reflog
+//查看详细提交日志
+git log
+//回退历史版本
+git reset --hard f04648a
+//查看分支
+git branch -v
+//创建分支//创建一个名为热修复的分支
+git branch hot-fix
+//切换分支
+git checkout hot-fix
+//合并分支
+git merge hot-fix   //在当前为master的情况下，将hot-fix合并到master
+//合并冲突：
+/*
+在两个分支中，同一位置同一命名的文件不一致产生冲突
+冲突处理：
+1.对工作区的冲突文件进行修改
+2.git add hello.txt
+//注意：不加hello.txt
+3.git commit -m "hello1.5"
+*/
+//查看远程库
+git remote -v
+//创建远程库
+1.在git-hub中新建
+2.//起别名
+git remote add git-demo https://github.com/Hao-You-1997/git-demo.git
+//删除远程库别名
+git remote rm git-demo
+//重命名远程库别名
+git remote rename git-demo2 git-demo
+//推送master分支至远程库
+git push git-demo master
+//拉取远程库master分支至本地当前分支
+git pull git-demo master
+/*
+克隆:
+1.创建文件夹
+2.
+git clone https://github.com/Hao-You-1997/git-demo.git
+*/
+/*
+git push卡住:
+git config --global sendpack.sideband false
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+git config --global http.sslVerify false
+git config --global http.proxy 'http://127.0.0.1:9000'
+git config --global http.sslBackend "openssl"
+git config --global http.sslCAInfo "D:\Git\mingw64\ssl\cert.pem"
+ipconfig/flushdns   //cmd中
+*/
+
+/*
+跨团队协作
+1.将别的团队的库fork到自己账号下来
+2.克隆代码进行修改后提交，或者直接再git-hub上修改代码并提交
+3.pull request
+4.原团队负责人再pull request中查看代码及注释，感觉没问题就merge
+*/
+
+
+/*
+ssh密码设置
+//-t表示哪种加密算法//-C表示哪个账号
+1.ssh-keygen -t rsa -C 18206889179@163.com
+2.cat id_rsa.pub    //并将公钥复制
+3.将公钥复制添加到git-hub的ssh设置上取
+*/
+
+
+/*
+关联idea
+1.在admin/下建立git.ignore              //因为很多后缀文件不需要拷贝过去
+2.在admin/下的.gitconfig中写入：       //用作关联git.ignore
+[core]
+	excludesfile = C:\Users\Admin\git.ignore            //windows中使用“/”
+3.
+*/
+
+
+
+
+
