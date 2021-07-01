@@ -7,5 +7,6 @@ public class GitDemo {
         System.out.println("第二次提交");
         System.out.println(156651);
         System.out.println(231);
+        System.out.println("test,不提交本地库");
     }
 }
